@@ -6,7 +6,7 @@ if (userToolbar) {
     const newButton = document.createElement('button');
     newButton.id = 'newButton'; // Optional: Add an ID to the button
     newButton.className = 'custom-btn'; // Optional: Add a class for styling
-    newButton.textContent = 'New Action'; // Set the text on the button
+    newButton.textContent = 'Billing'; // Set the text on the button
 
     // Add functionality to the button
     newButton.addEventListener('click', () => {
