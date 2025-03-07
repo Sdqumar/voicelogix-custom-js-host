@@ -10,7 +10,7 @@ if (userToolbar) {
 
     // Add functionality to the button
     newButton.addEventListener('click', () => {
-        alert('New Action Button Clicked!');
+return location.href="https://billingcenter.voicelogix.com"
     });
     
     newButton.style.color = '#08c'; // Blue text
