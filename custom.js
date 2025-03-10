@@ -7,8 +7,6 @@ if (userToolbar) {
     container.className = 'button-container'; // Add class for styling
 
     // Create the pipe element
-    const pipeEL = document.createElement('span');
-    pipeEL.textContent = '|';
 
     // Create the new button
     const newButton = document.createElement('button');
@@ -31,18 +29,9 @@ if (userToolbar) {
     });
 
     // Append the pipe and button inside the container
-    container.appendChild(pipeEL);
     container.appendChild(newButton);
 
-    // Apply Flexbox to the container
-    Object.assign(container.style, {
-        display: 'flex',
-        alignItems: 'center',
-         padding: '10px 15px', // Padding around the pipe and button
-        gap: '5px' // Space between pipe and button
-        
-    });
-
+  
     // Append the container to the user-toolbar
     userToolbar.appendChild(container);
 
