@@ -16,7 +16,7 @@ if (userToolbar) {
 
     // Add functionality to the button
     newButton.addEventListener('click', () => {
-        location.href = "https://billingcenter.voicelogix.com";
+        window.open("https://billingcenter.voicelogix.com", "_blank");
     });
 
     // Apply inline styles for button (or use CSS)
