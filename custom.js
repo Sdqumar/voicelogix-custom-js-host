@@ -3,7 +3,7 @@ const userToolbar = document.querySelector('.user-toolbar'); // Target the user-
 
 if (userToolbar) {
     // Create a container div to wrap both pipe and button
-    const container = document.createElement('span');
+    const container = document.createElement('li');
     container.className = 'button-container'; // Add class for styling
 
     // Create the pipe element
