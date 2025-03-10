@@ -2,7 +2,15 @@
 const userToolbar = document.querySelector('.user-toolbar'); // Target the user-toolbar element
 
 if (userToolbar) {
-    // Create a new button element
+    // Create a container div to wrap both pipe and button
+    const container = document.createElement('div');
+    container.className = 'button-container'; // Add class for styling
+
+    // Create the pipe element
+    const pipeEL = document.createElement('span');
+    pipeEL.textContent = '|';
+
+    // Create the new button
     const newButton = document.createElement('button');
     newButton.id = 'newButton'; // Optional: Add an ID to the button
     newButton.className = 'custom-btn'; // Optional: Add a class for styling
@@ -10,17 +18,35 @@ if (userToolbar) {
 
     // Add functionality to the button
     newButton.addEventListener('click', () => {
-return location.href="https://billingcenter.voicelogix.com"
+        location.href = "https://billingcenter.voicelogix.com";
     });
-    
-    newButton.style.color = '#08c'; // Blue text
-    newButton.style.border = 'none'; // Remove border
-    newButton.style.padding = '10px 15px'; // Add padding
-    newButton.style.cursor = 'pointer'; // Pointer cursor on hover
-    newButton.style.background = 'transparent'; // Remove background
-    // Append the button to the user-toolbar
-    userToolbar.appendChild(newButton);
- // Create a CSS class for the hover effect
+
+    // Apply inline styles for button (or use CSS)
+    Object.assign(newButton.style, {
+        color: '#08c', // Blue text
+        border: 'none', // Remove border
+        cursor: 'pointer', // Pointer cursor on hover
+        background: 'transparent', // Remove background
+        fontSize: '14px' // Adjust font size
+    });
+
+    // Append the pipe and button inside the container
+    container.appendChild(pipeEL);
+    container.appendChild(newButton);
+
+    // Apply Flexbox to the container
+    Object.assign(container.style, {
+        display: 'flex',
+        alignItems: 'center',
+         padding: '10px 15px', // Padding around the pipe and button
+        gap: '5px' // Space between pipe and button
+        
+    });
+
+    // Append the container to the user-toolbar
+    userToolbar.appendChild(container);
+
+    // Create a CSS class for the hover effect
     const style = document.createElement('style');
     style.innerHTML = `
         #newButton:hover {
@@ -28,10 +54,8 @@ return location.href="https://billingcenter.voicelogix.com"
         }
     `;
     document.head.appendChild(style);
+
     console.log('Button successfully added to the user-toolbar!');
 } else {
     console.error('user-toolbar element not found');
 }
-
-
-    
